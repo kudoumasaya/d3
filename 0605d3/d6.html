@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <title>練習</title>
+</head>
+<body>
+  <p>おはよう　１</p>
+  <p>おはよう　2</p>
+  <p>おはよう　3</p>
+  <script src="http://d3js.org/d3.v3.min.js" charset="utf-8">
+  </script>
+
+  <script>
+    var dataset = [12, 100, 4958];
+    var p = d3.select("body").selectAll("p");
+
+    // p.data(dataset).text(function(d){
+    //   return d;
+    // });
+    p.data(dataset).text(function(d ,i){
+      return i + "番目" + d + "です！";
+    });
+
+  </script>
+</body>
+</html>
