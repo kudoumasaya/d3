@@ -22,6 +22,7 @@
         .enter()
         .append("circle")
         
+        /*
         .on("mouseover", function(d){
             d3.select(this).attr("fill", "orange");
         })
@@ -32,6 +33,7 @@
             var rs = d3.select(this).attr("r");
             alert(rs);
         })
+        */
 
         .transition()
         .delay(function(d, i){
@@ -51,19 +53,17 @@
           cy: h / 2,
           r: function(d){ return d; },
           fill: "red"
-        });
-
-        //ここを入れるとエラーが出る
-        // .each("end", function() {
-        //   d3.select(this)
-        //     .transition()
-        //     .duration(800)
-        //     .attr({
-        //       fill: "pink",
-        //       r: 0,
-        //       cy: 0
-        //     });
-        // });
+        })
+        .each("end", function() {
+          d3.select(this)
+            .transition()
+            .duration(800)
+            .attr({
+              fill: "pink",
+              r: 0,
+              cy: 0
+            });
+         });
 
   </script>
 </body>
